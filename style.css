@@ -676,6 +676,43 @@ img {
     font-size: 0.95rem;
 }
 
+.info-card small {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.education-item:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+.education-item strong {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.education-item small {
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+    line-height: 1.6;
+}
+
 
 /* =========================================================
    SKILLS
@@ -922,6 +959,64 @@ img {
 
 
 /* =========================================================
+   EDUCATION / EXPERIENCE
+========================================================= */
+
+.education-grid,
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.edu-card,
+.exp-card {
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.edu-card:hover,
+.exp-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(124, 92, 255, 0.4);
+}
+
+.edu-year,
+.exp-period {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+}
+
+.edu-card h3,
+.exp-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.edu-card p,
+.exp-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.edu-card small {
+    display: block;
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
    CONTACT
 ========================================================= */
 
@@ -1073,6 +1168,11 @@ img {
 
     .certificates-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-grid,
+    .experience-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1247,6 +1347,11 @@ img {
     /* Certificates */
 
     .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid,
+    .experience-grid {
         grid-template-columns: 1fr;
     }
 
